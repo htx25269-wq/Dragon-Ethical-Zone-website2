@@ -10,43 +10,34 @@
         
         :root {
             --neon: #00ff9d;
-            --fire: #ff4500;
+            --fire: #ff3300;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', sans-serif;
             background: #000;
             color: #ffffff;
-            line-height: 1.6;
         }
         
         .scanline {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: linear-gradient(transparent 50%, rgba(255, 69, 0, 0.04) 50%);
+            background: linear-gradient(transparent 50%, rgba(255, 50, 0, 0.05) 50%);
             background-size: 100% 4px;
             pointer-events: none;
             z-index: 9999;
-            animation: scan 6s linear infinite;
+            animation: scan 5s linear infinite;
         }
         
-        @keyframes scan {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(300%); }
-        }
+        @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(300%); } }
         
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            top: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.97);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 2px solid var(--neon);
@@ -70,34 +61,23 @@
             font-weight: 700;
         }
         
-        .logo img {
-            height: 65px;
-            filter: drop-shadow(0 0 20px var(--neon));
-        }
+        .logo img { height: 65px; filter: drop-shadow(0 0 20px var(--neon)); }
         
         .nav-links {
-            display: flex;
-            gap: 2.8rem;
-            list-style: none;
+            display: flex; gap: 2.8rem; list-style: none;
         }
         
         .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
+            color: #fff; text-decoration: none; font-weight: 500;
             transition: 0.3s;
         }
+        .nav-links a:hover { color: var(--neon); text-shadow: 0 0 15px var(--neon); }
         
-        .nav-links a:hover {
-            color: var(--neon);
-            text-shadow: 0 0 15px var(--neon);
-        }
-        
-        /* Hero with Fire Flames Background */
+        /* 🔥 Stronger Fire Background */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-                        url('https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1620121684840-edffcfc4b878?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -108,15 +88,15 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(255,69,0,0.25) 0%, transparent 70%);
-            animation: firepulse 8s ease-in-out infinite;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 80, 0, 0.45) 0%, rgba(180, 0, 0, 0.25) 50%, transparent 80%);
+            animation: intensefire 4s ease-in-out infinite alternate;
+            pointer-events: none;
         }
         
-        @keyframes firepulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 0.85; }
+        @keyframes intensefire {
+            0% { opacity: 0.65; transform: scale(1.05); }
+            100% { opacity: 0.9; transform: scale(1.0); }
         }
         
         .hero-content {
@@ -127,16 +107,16 @@
         
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 5rem;
+            font-size: 5.2rem;
             margin-bottom: 1rem;
             color: #ffffff;
-            text-shadow: 0 0 40px var(--neon), 0 0 60px var(--fire);
+            text-shadow: 0 0 30px var(--neon), 0 0 60px var(--fire);
         }
         
         .hero p {
-            font-size: 1.55rem;
+            font-size: 1.6rem;
             margin: 1rem 0 2.5rem;
-            color: #e0e0e0;
+            color: #f0f0f0;
         }
         
         .cta-btn {
@@ -155,16 +135,11 @@
         .cta-btn:hover {
             background: var(--neon);
             color: #000;
-            box-shadow: 0 0 40px var(--neon);
+            box-shadow: 0 0 45px var(--neon);
             transform: translateY(-5px);
         }
         
-        section {
-            padding: 110px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
+        section { padding: 110px 5%; max-width: 1400px; margin: 0 auto; }
         h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 3.2rem;
@@ -180,7 +155,7 @@
         }
         
         .service-card {
-            background: rgba(15, 23, 20, 0.85);
+            background: rgba(15, 23, 20, 0.9);
             border: 2px solid rgba(0, 255, 157, 0.3);
             padding: 2.5rem;
             border-radius: 12px;
@@ -190,37 +165,24 @@
         .service-card:hover {
             border-color: var(--neon);
             transform: translateY(-20px);
-            box-shadow: 0 0 50px rgba(0, 255, 157, 0.4);
-        }
-        
-        .service-card h3 {
-            font-size: 1.9rem;
-            margin-bottom: 1rem;
-            color: var(--neon);
-        }
-        
-        .price {
-            font-size: 2.4rem;
-            color: #00ff9d;
-            margin: 1.2rem 0;
+            box-shadow: 0 0 50px rgba(0, 255, 157, 0.5);
         }
         
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 2.5rem;
+            gap: 30px;
+            margin-top: 3rem;
         }
         
         .social-icons a {
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: #fff;
             transition: all 0.3s;
         }
-        
         .social-icons a:hover {
             color: var(--neon);
-            transform: scale(1.2);
+            transform: scale(1.25) rotate(8deg);
         }
         
         footer {
@@ -234,7 +196,6 @@
 <body>
     <div class="scanline"></div>
     
-    <!-- Navbar -->
     <header>
         <nav>
             <div class="logo">
@@ -250,21 +211,20 @@
         </nav>
     </header>
 
-    <!-- Hero with Fire Background -->
+    <!-- Hero with Strong Fire Effect -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>DRAGON ETHICAL ZONE</h1>
-            <p style="font-size: 1.6rem;">Elite Ethical Hackers | Cybersecurity Experts</p>
-            <p>We protect what matters most — with precision and power.</p>
+            <p style="font-size: 1.65rem;">Elite Ethical Hackers • Cybersecurity Warriors</p>
+            <p>Dangerous. Professional. Unstoppable.</p>
             <br>
             <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })" class="cta-btn">
-                Begin Secure Mission
+                BEGIN MISSION
             </button>
             
-            <!-- Social Icons -->
             <div class="social-icons">
                 <a href="https://t.me/DRAGONETHICALZONE" target="_blank" title="Telegram">
-                    <i class="fab fa-telegram"></i>
+                    <i class="fab fa-telegram-plane"></i>
                 </a>
                 <a href="https://www.facebook.com/share/18s2SbqZTW/" target="_blank" title="Facebook">
                     <i class="fab fa-facebook"></i>
@@ -273,7 +233,6 @@
         </div>
     </section>
 
-    <!-- Services -->
     <section id="services">
         <h2>Our Expertise</h2>
         <div class="services">
@@ -300,24 +259,19 @@
         </div>
     </section>
 
-    <!-- About -->
     <section id="about">
         <h2>About DRAGON ETHICAL ZONE</h2>
         <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.25rem; color: #ddd;">
-            <p>We are a team of certified ethical hackers committed to excellence in cybersecurity. Our mission is to identify vulnerabilities before malicious actors can exploit them.</p>
-            <p style="margin-top: 2rem; color: var(--neon); font-weight: 500;">
-                Legal • Professional • Highly Effective
-            </p>
+            <p>We are a team of certified ethical hackers committed to excellence in cybersecurity.</p>
         </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
         <h2>Get In Touch</h2>
-        <form onsubmit="handleSubmit(event)">
-            <input type="text" placeholder="Your Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <textarea rows="7" placeholder="Tell us about your project or requirement..." required></textarea>
+        <form onsubmit="handleSubmit(event)" style="max-width:700px; margin:0 auto;">
+            <input type="text" placeholder="Your Full Name" required style="width:100%; padding:16px; margin-bottom:15px; background:rgba(255,255,255,0.08); border:2px solid #00ff9d; color:white; border-radius:8px;">
+            <input type="email" placeholder="Email Address" required style="width:100%; padding:16px; margin-bottom:15px; background:rgba(255,255,255,0.08); border:2px solid #00ff9d; color:white; border-radius:8px;">
+            <textarea rows="7" placeholder="Tell us about your requirement..." required style="width:100%; padding:16px; background:rgba(255,255,255,0.08); border:2px solid #00ff9d; color:white; border-radius:8px;"></textarea>
             <button type="submit" class="cta-btn" style="width:100%;">SEND SECURE MESSAGE</button>
         </form>
     </section>
@@ -331,11 +285,10 @@
     </audio>
 
     <script>
-        // Welcome Sound
         window.addEventListener('load', () => {
             const audio = document.getElementById('welcomeSound');
             audio.volume = 0.35;
-            setTimeout(() => audio.play().catch(()=>{}), 1200);
+            setTimeout(() => audio.play().catch(()=>{}), 1000);
         });
 
         function handleSubmit(e) {
@@ -345,4 +298,4 @@
         }
     </script>
 </body>
-        </html>
+    </html>
