@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRAGON ETHICAL ZONE | Ethical Hacking</title>
-    <meta name="description" content="Professional Ethical Hacking Services - DRAGON ETHICAL ZONE">
+    <title>DRAGON ETHICAL ZONE | Professional Ethical Hacking</title>
+    <meta name="description" content="Elite Ethical Hacking Services - DRAGON ETHICAL ZONE">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
         
         :root {
-            --neon-green: #00ff41;
-            --dark-bg: #0a0a0a;
-            --matrix: #003300;
+            --neon: #00ff9d;
+            --dark: #0a0a0a;
         }
         
         * {
@@ -21,43 +20,26 @@
         }
         
         body {
-            font-family: 'Roboto Mono', monospace;
-            background: linear-gradient(180deg, #0a0a0a 0%, #001a00 100%);
-            color: #00ff41;
-            overflow-x: hidden;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27><text y=%2712%27 font-size=%2712%27>🐉</text></svg>'), auto;
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #ffffff;
+            line-height: 1.6;
         }
         
         .scanline {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                transparent 50%,
-                rgba(0, 255, 65, 0.03) 50%
-            );
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(transparent 50%, rgba(0, 255, 157, 0.03) 50%);
             background-size: 100% 4px;
             pointer-events: none;
             z-index: 9999;
-            animation: scan 4s linear infinite;
+            animation: scan 6s linear infinite;
         }
         
         @keyframes scan {
             0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-        
-        .glitch {
-            animation: glitch 1s linear infinite;
-        }
-        
-        @keyframes glitch {
-            2%, 64% { transform: translate(2px,0) skew(0deg); }
-            4%, 60% { transform: translate(-2px,0) skew(0deg); }
-            62% { transform: translate(0,0) skew(5deg); }
+            100% { transform: translateY(300%); }
         }
         
         header {
@@ -65,15 +47,15 @@
             top: 0;
             width: 100%;
             background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 2px solid var(--neon-green);
+            border-bottom: 2px solid var(--neon);
         }
         
         nav {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -84,208 +66,166 @@
             align-items: center;
             gap: 15px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 700;
-            text-shadow: 0 0 20px var(--neon-green);
         }
         
         .logo img {
-            height: 60px;
-            filter: drop-shadow(0 0 15px var(--neon-green));
+            height: 65px;
+            filter: drop-shadow(0 0 20px var(--neon));
         }
         
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2.8rem;
             list-style: none;
         }
         
         .nav-links a {
-            color: var(--neon-green);
+            color: #fff;
             text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            position: relative;
+            font-weight: 500;
+            transition: 0.3s;
         }
         
         .nav-links a:hover {
-            color: white;
-            text-shadow: 0 0 15px var(--neon-green);
+            color: var(--neon);
+            text-shadow: 0 0 15px var(--neon);
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--neon-green);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
+        /* Hero Section with Hacker Background */
         .hero {
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                        url('https://images.unsplash.com/photo-1555066932-2f1c2c0b5b1f?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
             text-align: center;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,26,0,0.85));
+            position: relative;
         }
         
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
+            z-index: 2;
         }
         
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4.5rem;
+            font-size: 5rem;
             margin-bottom: 1rem;
-            text-shadow: 0 0 30px var(--neon-green);
-            animation: glow 2s ease-in-out infinite alternate;
+            color: #ffffff;
+            text-shadow: 0 0 40px var(--neon);
+            animation: glow 3s ease-in-out infinite alternate;
         }
         
         @keyframes glow {
-            from { text-shadow: 0 0 20px var(--neon-green); }
-            to { text-shadow: 0 0 40px var(--neon-green), 0 0 60px var(--neon-green); }
+            from { text-shadow: 0 0 20px var(--neon); }
+            to { text-shadow: 0 0 50px var(--neon), 0 0 80px var(--neon); }
         }
         
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
+            font-size: 1.5rem;
+            margin: 1rem 0 2.5rem;
+            color: #e0e0e0;
         }
         
         .cta-btn {
-            display: inline-block;
             background: transparent;
-            color: var(--neon-green);
-            border: 3px solid var(--neon-green);
-            padding: 15px 40px;
+            color: white;
+            border: 3px solid var(--neon);
+            padding: 18px 50px;
             font-size: 1.3rem;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.4s;
-            box-shadow: 0 0 20px var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .cta-btn:hover {
-            background: var(--neon-green);
-            color: black;
-            box-shadow: 0 0 40px var(--neon-green);
-            transform: scale(1.05);
+            background: var(--neon);
+            color: #000;
+            box-shadow: 0 0 40px var(--neon);
+            transform: translateY(-5px);
         }
         
         section {
-            padding: 100px 5%;
+            padding: 110px 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
         
         h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--neon-green);
-            text-shadow: 0 0 20px;
+            margin-bottom: 4rem;
+            color: #ffffff;
         }
         
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
         }
         
         .service-card {
-            background: rgba(10, 30, 10, 0.6);
-            border: 2px solid var(--neon-green);
-            padding: 2rem;
-            border-radius: 8px;
+            background: rgba(15, 23, 20, 0.85);
+            border: 2px solid rgba(0, 255, 157, 0.3);
+            padding: 2.5rem;
+            border-radius: 12px;
             transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
         }
         
         .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 0 40px var(--neon-green);
+            border-color: var(--neon);
+            transform: translateY(-20px);
+            box-shadow: 0 0 50px rgba(0, 255, 157, 0.4);
         }
         
         .service-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin-bottom: 1rem;
+            color: var(--neon);
         }
         
         .price {
-            font-size: 2.2rem;
-            color: #00ff80;
-            margin: 1rem 0;
+            font-size: 2.4rem;
+            color: #00ff9d;
+            margin: 1.2rem 0;
         }
         
         .about {
-            background: #001a00;
-        }
-        
-        .contact {
-            background: linear-gradient(135deg, #0a0a0a, #001a00);
+            background: #050505;
         }
         
         form {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
         input, textarea {
             width: 100%;
-            background: #000;
-            border: 2px solid var(--neon-green);
-            color: var(--neon-green);
-            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(0, 255, 157, 0.4);
+            color: #fff;
+            padding: 16px;
             margin-bottom: 1.5rem;
-            font-family: inherit;
+            border-radius: 8px;
+            font-size: 1.1rem;
         }
         
         footer {
             background: #000;
             text-align: center;
-            padding: 3rem 1rem;
-            border-top: 2px solid var(--neon-green);
-        }
-        
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.05;
-            pointer-events: none;
-            z-index: -1;
+            padding: 4rem 1rem;
+            border-top: 2px solid var(--neon);
         }
     </style>
 </head>
 <body>
-    <!-- Scanline Effect -->
     <div class="scanline"></div>
     
     <!-- Navbar -->
@@ -298,174 +238,100 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="glitch">DRAGON ETHICAL ZONE</h1>
-            <p>We are Professional Ethical Hackers</p>
-            <p style="font-size: 1.1rem; margin-top: 1rem;">Penetration Testing • Red Teaming • Cybersecurity Training</p>
+            <h1>DRAGON ETHICAL ZONE</h1>
+            <p style="font-size: 1.6rem;">Elite Ethical Hackers | Cybersecurity Experts</p>
+            <p>We protect what matters most — with precision and power.</p>
             <br>
-            <button onclick="scrollToServices()" class="cta-btn">START MISSION</button>
+            <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })" class="cta-btn">
+                Begin Secure Mission
+            </button>
         </div>
     </section>
 
     <!-- Services -->
     <section id="services">
-        <h2>OUR SERVICES</h2>
+        <h2>Our Expertise</h2>
         <div class="services">
             <div class="service-card">
-                <h3>🤖 Advanced Bots</h3>
+                <h3>🤖 Advanced Automation Bots</h3>
                 <div class="price">1500+ BDT</div>
-                <p>Custom Telegram/Discord bots, automation tools, and security bots with advanced features.</p>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li>✔️ Telegram Bots</li>
-                    <li>✔️ Web Scrapers</li>
-                    <li>✔️ Security Monitoring</li>
-                </ul>
-                <button onclick="alert('Contact us on Telegram for this service')" style="margin-top: 1.5rem; width: 100%; padding: 12px; background: transparent; border: 2px solid #00ff41; color: #00ff41; cursor: pointer;">Order Now</button>
+                <p>Custom Telegram, Discord &amp; Web bots with advanced security features.</p>
+                <button onclick="alert('Contact us on Telegram for this service')" style="margin-top:20px; width:100%; padding:14px; background:transparent; border:2px solid #00ff9d; color:white; border-radius:8px; cursor:pointer;">Order Bot</button>
             </div>
             
             <div class="service-card">
-                <h3>🎓 Student Package</h3>
+                <h3>🎓 Student Mastery Program</h3>
                 <div class="price">2000+ BDT</div>
-                <p>Complete ethical hacking course with hands-on labs, tools & certification guidance.</p>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li>✔️ Full Course</li>
-                    <li>✔️ Live Sessions</li>
-                    <li>✔️ Tools Setup</li>
-                    <li>✔️ Project Support</li>
-                </ul>
-                <button onclick="alert('Contact us on Telegram for enrollment')" style="margin-top: 1.5rem; width: 100%; padding: 12px; background: transparent; border: 2px solid #00ff41; color: #00ff41; cursor: pointer;">Enroll Now</button>
+                <p>Complete Ethical Hacking Course with hands-on labs and mentorship.</p>
+                <button onclick="alert('Contact us on Telegram for enrollment')" style="margin-top:20px; width:100%; padding:14px; background:transparent; border:2px solid #00ff9d; color:white; border-radius:8px; cursor:pointer;">Enroll Now</button>
             </div>
             
             <div class="service-card">
-                <h3>🔒 Ethical Hacking</h3>
-                <div class="price">Custom</div>
-                <p>Professional penetration testing, vulnerability assessment, and full security audit.</p>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li>✔️ Web App Testing</li>
-                    <li>✔️ Network Security</li>
-                    <li>✔️ Social Engineering</li>
-                    <li>✔️ Report + Fix</li>
-                </ul>
-                <button onclick="alert('Contact us for custom quote')" style="margin-top: 1.5rem; width: 100%; padding: 12px; background: transparent; border: 2px solid #00ff41; color: #00ff41; cursor: pointer;">Get Quote</button>
+                <h3>🔒 Professional Penetration Testing</h3>
+                <div class="price">Custom Quote</div>
+                <p>Full security audits, vulnerability assessment &amp; red team operations.</p>
+                <button onclick="alert('Contact us for a professional quote')" style="margin-top:20px; width:100%; padding:14px; background:transparent; border:2px solid #00ff9d; color:white; border-radius:8px; cursor:pointer;">Get Audit</button>
             </div>
         </div>
     </section>
 
     <!-- About -->
     <section id="about" class="about">
-        <h2>WHO WE ARE</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem; line-height: 1.8;">
-            <p>We are a team of certified ethical hackers dedicated to making the digital world safer. DRAGON ETHICAL ZONE provides professional, legal, and highly effective cybersecurity solutions.</p>
-            <br>
-            <p style="color: #00ff80;">"We hack to protect — not to destroy."</p>
+        <h2>About DRAGON ETHICAL ZONE</h2>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.25rem; color: #ddd;">
+            <p>We are a team of certified ethical hackers committed to excellence in cybersecurity. Our mission is to identify vulnerabilities before malicious actors can exploit them.</p>
+            <p style="margin-top: 2rem; color: var(--neon); font-weight: 500;">
+                Legal • Professional • Highly Effective
+            </p>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact">
-        <h2>CONNECT WITH US</h2>
+    <section id="contact">
+        <h2>Get In Touch</h2>
         <form onsubmit="handleSubmit(event)">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="6" placeholder="Describe your requirement..." required></textarea>
-            <button type="submit" class="cta-btn" style="width: 100%;">SEND MESSAGE</button>
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea rows="7" placeholder="Tell us about your project or requirement..." required></textarea>
+            <button type="submit" class="cta-btn" style="width:100%;">SEND SECURE MESSAGE</button>
         </form>
         
-        <div style="text-align: center; margin-top: 3rem;">
-            <p><strong>Telegram:</strong> <a href="https://t.me/DRAGONETHICALZONE" target="_blank" style="color: #00ff41;">@DRAGONETHICALZONE</a></p>
-            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/18s2SbqZTW/" target="_blank" style="color: #00ff41;">DRAGON ETHICAL ZONE</a></p>
+        <div style="text-align:center; margin-top: 4rem; font-size: 1.2rem;">
+            <p><strong>Telegram:</strong> <a href="https://t.me/DRAGONETHICALZONE" target="_blank" style="color:var(--neon);">DRAGONETHICALZONE</a></p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/18s2SbqZTW/" target="_blank" style="color:var(--neon);">DRAGON ETHICAL ZONE</a></p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 DRAGON ETHICAL ZONE • All Rights Reserved</p>
-        <p style="margin-top: 10px; opacity: 0.7;">Professional Ethical Hacking Services</p>
+        <p>&copy; 2026 DRAGON ETHICAL ZONE — Professional Ethical Hacking Services</p>
     </footer>
 
-    <!-- Welcome Sound -->
     <audio id="welcomeSound" preload="auto">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        <!-- Replace with your own sound file if you have one -->
     </audio>
 
     <script>
-        // Play welcome sound on load
+        // Welcome Sound
         window.addEventListener('load', () => {
             const audio = document.getElementById('welcomeSound');
-            audio.volume = 0.4;
-            setTimeout(() => {
-                audio.play().catch(() => {
-                    console.log("Autoplay prevented. Click anywhere to enable sound.");
-                });
-            }, 800);
+            audio.volume = 0.35;
+            setTimeout(() => audio.play().catch(()=>{}), 1200);
         });
-
-        function scrollToServices() {
-            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
-        }
 
         function handleSubmit(e) {
             e.preventDefault();
-            alert("✅ Message received! Our team will contact you soon via Telegram.");
+            alert("✅ Thank you! Our team will contact you shortly via Telegram.");
             e.target.reset();
         }
-
-        // Keyboard shortcut for fun
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'd' && e.ctrlKey) {
-                alert("🐉 DRAGON PROTOCOL ACTIVATED");
-            }
-        });
-
-        // Matrix rain effect (simple version)
-        function createMatrix() {
-            const canvas = document.createElement('canvas');
-            canvas.className = 'matrix-bg';
-            document.body.appendChild(canvas);
-            
-            const ctx = canvas.getContext('2d');
-            canvas.height = window.innerHeight;
-            canvas.width = window.innerWidth;
-            
-            const chars = "01アイウエオカキクケコ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = [];
-            
-            for (let x = 0; x < columns; x++) {
-                drops[x] = Math.floor(Math.random() * 100);
-            }
-            
-            function draw() {
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#00ff41';
-                ctx.font = fontSize + 'px monospace';
-                
-                for (let i = 0; i < drops.length; i++) {
-                    const text = chars[Math.floor(Math.random() * chars.length)];
-                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    
-                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                    drops[i]++;
-                }
-            }
-            
-            setInterval(draw, 35);
-        }
-        
-        setTimeout(createMatrix, 1000);
     </script>
 </body>
 </html>
