@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRAGON ETHICAL ZONE | Professional Ethical Hacking</title>
-    <meta name="description" content="Elite Ethical Hacking Services - DRAGON ETHICAL ZONE">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
         
         :root {
             --neon: #00ff9d;
-            --dark: #0a0a0a;
+            --fire: #ff4500;
         }
         
         * {
@@ -30,7 +30,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: linear-gradient(transparent 50%, rgba(0, 255, 157, 0.03) 50%);
+            background: linear-gradient(transparent 50%, rgba(255, 69, 0, 0.04) 50%);
             background-size: 100% 4px;
             pointer-events: none;
             z-index: 9999;
@@ -93,16 +93,30 @@
             text-shadow: 0 0 15px var(--neon);
         }
         
-        /* Hero Section with Hacker Background */
+        /* Hero with Fire Flames Background */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-                        url('https://images.unsplash.com/photo-1555066932-2f1c2c0b5b1f?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(255,69,0,0.25) 0%, transparent 70%);
+            animation: firepulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes firepulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.85; }
         }
         
         .hero-content {
@@ -116,17 +130,11 @@
             font-size: 5rem;
             margin-bottom: 1rem;
             color: #ffffff;
-            text-shadow: 0 0 40px var(--neon);
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 0 0 20px var(--neon); }
-            to { text-shadow: 0 0 50px var(--neon), 0 0 80px var(--neon); }
+            text-shadow: 0 0 40px var(--neon), 0 0 60px var(--fire);
         }
         
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.55rem;
             margin: 1rem 0 2.5rem;
             color: #e0e0e0;
         }
@@ -197,24 +205,22 @@
             margin: 1.2rem 0;
         }
         
-        .about {
-            background: #050505;
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 2.5rem;
         }
         
-        form {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        input, textarea {
-            width: 100%;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(0, 255, 157, 0.4);
+        .social-icons a {
+            font-size: 2.8rem;
             color: #fff;
-            padding: 16px;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--neon);
+            transform: scale(1.2);
         }
         
         footer {
@@ -244,7 +250,7 @@
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero with Fire Background -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>DRAGON ETHICAL ZONE</h1>
@@ -254,6 +260,16 @@
             <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })" class="cta-btn">
                 Begin Secure Mission
             </button>
+            
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://t.me/DRAGONETHICALZONE" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/18s2SbqZTW/" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -285,7 +301,7 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="about">
+    <section id="about">
         <h2>About DRAGON ETHICAL ZONE</h2>
         <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.25rem; color: #ddd;">
             <p>We are a team of certified ethical hackers committed to excellence in cybersecurity. Our mission is to identify vulnerabilities before malicious actors can exploit them.</p>
@@ -304,11 +320,6 @@
             <textarea rows="7" placeholder="Tell us about your project or requirement..." required></textarea>
             <button type="submit" class="cta-btn" style="width:100%;">SEND SECURE MESSAGE</button>
         </form>
-        
-        <div style="text-align:center; margin-top: 4rem; font-size: 1.2rem;">
-            <p><strong>Telegram:</strong> <a href="https://t.me/DRAGONETHICALZONE" target="_blank" style="color:var(--neon);">DRAGONETHICALZONE</a></p>
-            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/18s2SbqZTW/" target="_blank" style="color:var(--neon);">DRAGON ETHICAL ZONE</a></p>
-        </div>
     </section>
 
     <footer>
@@ -334,4 +345,4 @@
         }
     </script>
 </body>
-</html>
+        </html>
